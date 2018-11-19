@@ -5,7 +5,8 @@ using std::endl;
 
 int fact(int n)
 {
-	for (int i = 0; i <= n; i++)
+	int fact = 1;
+	for (int i = 1; i <= n; i++)
 	{
 		fact *= i;
 	}
@@ -14,27 +15,28 @@ int fact(int n)
 
 int main()
 {
-	int n = 0;
-	int result = 0;
-	int fact = 0;
-	cout << "Input n value: " << endl;
+	int n = 0, result = 0, factorial = 0;
+	cout << "Input n value " << endl;
 	cin >> n;
-
+	factorial = fact(n);
 	for (int i = 3;; i++)
 	{
 		int result = i * (i - 1) * (i - 2);
-		if (int result < int fact)
+		if (result > factorial)
+		{
+			cout << "Multiplication does not exist." << endl;
+			break;
+		}
+		else if (result < factorial)
 		{
 			continue;
 		}
-		else if (int result == int fact)
-		{
-			cout << "Mult does not exist." << endl;
-		}
 		else
 		{
-			cout << "Mult exists." << endl;
+			cout << "Multiplication exists." << endl;
+			break;
 		}
+
 	}
 	system("pause");
 	return 0;
