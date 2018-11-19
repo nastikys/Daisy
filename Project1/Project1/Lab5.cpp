@@ -34,6 +34,7 @@ int main()
 		else
 		{
 			cout << "Multiplication exists." << endl;
+			cout << "The numbers are "<<  i  <<", "<< (i - 1) << ", "<< (i - 2) << endl;
 			break;
 		}
 
