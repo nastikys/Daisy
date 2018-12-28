@@ -1,3 +1,5 @@
+//Boiko A. IP81. Var5, Lab6. 5. 5. 	Для заданого цілого х, використовуючи розкладання функції e-x в ряд Тейлора  e-x , обчислити із заданою точністю epsilon значення.   
+
 #include <iostream>
 #include <cmath>
 using std::cout;
