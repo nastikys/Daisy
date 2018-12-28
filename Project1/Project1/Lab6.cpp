@@ -6,14 +6,25 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-int main()
+int inputValueOfX() {
+	int x;
+	float epsilon;
+	cout << "Input x value:" << endl;
+	cin >> x;
+	return x;
+}
+int inputValueOfEpsilon()
 {
-	const float eulerN = 2.71;
+	float epsilon;
+	cout << "Input epsilon value:" << endl;
+	cin >> epsilon;
+	return epsilon;
+}
+
+int tailorExpansion()
+{
+	float  epsilon, result = 1, prevResult = 1;
 	int x = 1;
-	float epsilon, y;
-	cout << "Input x and epsilon values :" << endl;
-	cin >> x >> epsilon;
-	float result = 1, prevResult = 1;
 	do {
 		for (int i = 1;; i++)
 		{
@@ -23,7 +34,14 @@ int main()
 			result += pow(-x, i) / fact;
 		}
 	} while (abs(prevResult - result) > epsilon);
+	return result;
+}
 
+int yCalculation()
+{
+	const float eulerNumber = 2.71;
+	int x = 1;
+	float result = 1, y;
 	if ((x >= 0) & (x <= 2))
 	{
 		y = result + pow(result, 2);
@@ -31,11 +49,20 @@ int main()
 	}
 	else
 	{
-		y = (1 / result * pow(eulerN, -5)) - (result*pow(eulerN, -2));
+		y = (1 / result * pow(eulerNumber, -5)) - (result*pow(eulerNumber, -2));
 		cout << "Y = " << y << endl;
 	}
+	return y;
+}
+int main()
+{
+	int x = 1;
+	float  epsilon, y, result = 1;
+	x = inputValueOfX();
+	epsilon = inputValueOfEpsilon();
+	result = tailorExpansion();
+	y = yCalculation();
 	return 0;
 	system("pause");
-
 
 }
